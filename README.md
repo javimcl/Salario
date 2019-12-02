@@ -45,6 +45,12 @@ Junit. Es un framework para realizar pruebas unitarias.
 * Abrir la clase Principal que se encuentra en el paquete com.ejercicio.salario.
 * Ejecutar la clase.
 
+**Entrada**
+
+
+
+**Salida**
+
 
 
 
@@ -61,10 +67,12 @@ Contiene cuatro clases:
 
 * **Horario**. Clase horario para colocar el incio y fin con su respectivo salario.
 * **Principal**. Clase principal para obtener el valor total ganado por el empleador.
-* Semana**. Enumeracion de los dias de la semana.
+* **Semana**. Enumeracion de los dias de la semana.
 * **ServicioHorario**. Clase servicio para obtener todos los metodos utlizados para el calculo del salario.
 
 Paquete test
+
+Contiene tres clases:
 
 * **PruebaHorario**. Clase que realiza la prueba de los horarios.
 * **PruebaSemana**. Clase para realizar las pruebas de la enumeracion de la semana.
