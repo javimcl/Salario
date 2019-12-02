@@ -1,6 +1,5 @@
 package com.ejercicio.salario;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -15,9 +14,17 @@ import java.util.Map;
  */
 public class Principal {
 
+	/**
+	 * 
+	 * <b> Netodo para ejecutar el programa. </b>
+	 * <p>
+	 * [Author: jlucero, Date: 2/12/2019]
+	 * </p>
+	 *
+	 * @param args
+	 */
 	public static void main(String[] args) {
-		Map<String, List<Horario>> horarioSemana = new HashMap<>();
-		horarioSemana = ServicioHorario.llenarHorario();
+		Map<String, List<Horario>> horarioSemana = ServicioHorario.llenarHorario();
 		List<String> empleados = ServicioHorario.leerArchivo();
 		for (String empleado : empleados) {
 			Double total = 0.0;

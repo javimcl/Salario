@@ -31,6 +31,13 @@ import java.util.stream.Stream;
 public class ServicioHorario {
 
 	/**
+	 * Constructor
+	 */
+	private ServicioHorario() {
+		super();
+	}
+
+	/**
 	 * 
 	 * <b> Metodo que llena la semana segun el dia y el horario correspondiente
 	 * con sus repectivos valores del salario. </b>
@@ -69,32 +76,79 @@ public class ServicioHorario {
 		return horarioSemana;
 	}
 
+	/**
+	 * 
+	 * <b> Metodo que verifica el formato de la cadena al inicio. </b>
+	 * <p>
+	 * [Author: jlucero, Date: 2/12/2019]
+	 * </p>
+	 *
+	 * @param cadena
+	 *            cadena
+	 * @return boolean true cumple con el formato
+	 */
 	public static boolean verificarFormatoCadenaInicio(String cadena) {
 		Pattern pattern = Pattern.compile("([A-Za-z])+");
 		Matcher matcher = pattern.matcher(cadena);
 		return matcher.matches();
 	}
 
+	/**
+	 * 
+	 * <b> Metodo que verifica el formato de la cadena para el codigo de la
+	 * semana, las horas y minutos. </b>
+	 * <p>
+	 * [Author: jlucero, Date: 2/12/2019]
+	 * </p>
+	 *
+	 * @param cadena
+	 *            cadena
+	 * @return boolean true cumple con el formato
+	 */
 	public static boolean verificarFormatoCadena(String cadena) {
 		Pattern pattern = Pattern.compile("([A-Za-z]{2})(\\d{2}):(\\d{2})-(\\d{2}):(\\d{2})");
 		Matcher matcher = pattern.matcher(cadena);
 		return matcher.matches();
 	}
 
-	public static List<String> separarCadena(String str) {
-		return Stream.of(str.split("\\s+=|=\\s*|,\\s*")).map(String::new).collect(Collectors.toList());
+	/**
+	 * 
+	 * <b> Metodo para separa la cadena del nombre con la semana en horas y
+	 * minutos. </b>
+	 * <p>
+	 * [Author: jlucero, Date: 2/12/2019]
+	 * </p>
+	 *
+	 * @param cadena
+	 *            cadena
+	 * @return List<String> lista de la cadena separada segun el formato
+	 */
+	public static List<String> separarCadena(String cadena) {
+		return Stream.of(cadena.split("\\s+=|=\\s*|,\\s*")).map(String::new).collect(Collectors.toList());
 	}
 
 	public static List<String> separarHoras(String str) {
 		return Stream.of(str.split("-")).map(String::new).collect(Collectors.toList());
 	}
 
+	/**
+	 * 
+	 * <b> Metodo para validar el formato de toda la entrada, si ocurre un error
+	 * este informa cual el registro invalido. </b>
+	 * <p>
+	 * [Author: jlucero, Date: 2/12/2019]
+	 * </p>
+	 *
+	 * @param entrada
+	 *            entrada
+	 * @return boolean true si la cadena esta correcta
+	 */
 	public static boolean validarFormato(String entrada) {
-		List<String> lista = ServicioHorario.separarCadena(entrada);
+		List<String> lista = separarCadena(entrada);
 		boolean formatoValido = Boolean.TRUE;
 		for (int i = 0; i < lista.size() && formatoValido; i++) {
-			if ((i == 0 && !ServicioHorario.verificarFormatoCadenaInicio(lista.get(i)))
-					|| (i > 0 && !ServicioHorario.verificarFormatoCadena(lista.get(i)))) {
+			if ((i == 0 && !verificarFormatoCadenaInicio(lista.get(i)))
+					|| (i > 0 && !verificarFormatoCadena(lista.get(i)))) {
 				System.out.println("Error en el registro: " + lista.get(i));
 				formatoValido = Boolean.FALSE;
 			}
@@ -103,11 +157,21 @@ public class ServicioHorario {
 		return formatoValido;
 	}
 
+	/**
+	 * 
+	 * <b> Metodo que lee el archivo si lo encuentra, caso contrario crea el
+	 * archivo con los datos. </b>
+	 * <p>
+	 * [Author: jlucero, Date: 2/12/2019]
+	 * </p>
+	 *
+	 * @return List<String> lista de entradas.
+	 */
 	public static List<String> leerArchivo() {
-		List<String> lineas = new ArrayList<String>();
+		List<String> lineas = new ArrayList<>();
 		try {
 			Path p = Paths.get("fichero.txt");
-			if (Files.exists(p)) {
+			if (p.toFile().exists()) {
 				lineas = Files.readAllLines(p);
 			} else {
 				BufferedWriter bw = Files.newBufferedWriter(p, Charset.forName("UTF-8"));
@@ -124,7 +188,7 @@ public class ServicioHorario {
 				lineas.add(prueba4);
 				lineas.add(prueba5);
 
-				lineas.forEach((s) -> {
+				lineas.forEach(s -> {
 					try {
 						bw.write(s);
 						bw.newLine();
@@ -142,12 +206,26 @@ public class ServicioHorario {
 
 	}
 
+	/**
+	 * 
+	 * <b> Metodo para obtener el total del sueldo a pagar segun las horas y
+	 * dias de la semana. </b>
+	 * <p>
+	 * [Author: jlucero, Date: 2/12/2019]
+	 * </p>
+	 *
+	 * @param horarioSemana
+	 *            horarioSemana
+	 * @param campo
+	 *            dias de la semana con su horario
+	 * @return double total del valor a pagar segun el horario
+	 */
 	public static double obtenerTotalPagar(Map<String, List<Horario>> horarioSemana, String campo) {
 		Double total = 0.0;
 		List<String> horas = ServicioHorario.separarHoras(campo.substring(2));
-		List<Horario> horariosDia = new ArrayList<Horario>();
-		horariosDia = horarioSemana.get(campo.substring(0, 2));
-		List<Horario> horariosFiltrado = horariosDia.stream()
+		List<Horario> horariosDia = horarioSemana.get(campo.substring(0, 2));
+		List<Horario> horariosFiltrado = horariosDia
+				.stream()
 				.filter(horario -> LocalTime.parse(horas.get(0)).compareTo(horario.getHoraInicio()) >= 0
 						&& LocalTime.parse(horas.get(1)).compareTo(horario.getHoraFin()) <= 0)
 				.collect(Collectors.toList());

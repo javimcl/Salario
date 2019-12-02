@@ -1,4 +1,5 @@
 package com.ejercicio.salario;
+
 /**
  * 
  * <b> Enumeracion de los dias de la semana. </b>
@@ -17,6 +18,7 @@ public enum Semana {
 
 	/**
 	 * @param codigo
+	 *            codigo
 	 */
 	private Semana(String codigo) {
 		this.codigo = codigo;

@@ -19,9 +19,13 @@ public class Horario {
 	private Double salario;
 
 	/**
-	 * @param localTime
-	 * @param localTime2
+	 * 
+	 * @param horaInicio
+	 *            horaInicio
+	 * @param horaFin
+	 *            horaFin
 	 * @param salario
+	 *            salario
 	 */
 	public Horario(LocalTime horaInicio, LocalTime horaFin, Double salario) {
 		super();
@@ -29,13 +33,10 @@ public class Horario {
 		this.horaFin = horaFin;
 		this.salario = salario;
 	}
-	
 
 	public Horario() {
 		super();
 	}
-
-
 
 	public LocalTime getHoraInicio() {
 		return horaInicio;
@@ -68,12 +69,9 @@ public class Horario {
 		this.salario = salario;
 	}
 
-
 	@Override
 	public String toString() {
 		return "Horario [horaInicio=" + horaInicio + ", horaFin=" + horaFin + ", salario=" + salario + "]";
 	}
-	
-	
 
 }
