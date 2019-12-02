@@ -47,19 +47,23 @@ Junit. Es un framework para realizar pruebas unitarias.
 
 **Entrada**
 
-```RENE=MO10:00-12:00,TU10:00-12:00,TH01:00-03:00,SA14:00-18:00,SU20:00-21:00
+```
+RENE=MO10:00-12:00,TU10:00-12:00,TH01:00-03:00,SA14:00-18:00,SU20:00-21:00
 ASTRID=MO10:00-12:00,TH12:00-14:00,SU20:00-21:00
 JAVIER=MO12:00-14:00,TU10:00-12:00,TH01:00-03:00,SA14:00-18:00,SU20:00-21:00
 JENNY=TU10:00-12:00,WE12:00-15:00,SA13:00-18:00
-PATRICIO=FR02:00-03:00,SA15:00-18:00,SU20:00-22:00```
+PATRICIO=FR02:00-03:00,SA15:00-18:00,SU20:00-22:00
+```
 
 **Salida**
 
-```El monto a pagar RENE is: 215.0 USD
+```
+El monto a pagar RENE is: 215.0 USD
 El monto a pagar ASTRID is: 85.0 USD
 El monto a pagar JAVIER is: 215.0 USD
 El monto a pagar JENNY is: 175.0 USD
-El monto a pagar PATRICIO is: 135.0 USD```
+El monto a pagar PATRICIO is: 135.0 USD
+```
 
 
 **Contenido**
