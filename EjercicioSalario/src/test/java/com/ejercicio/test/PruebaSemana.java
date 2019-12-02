@@ -1,7 +1,3 @@
-/*
- * Copyright 2019 INSTITUTO ECUATORIANO DE SEGURIDAD SOCIAL - ECUADOR
- * Todos los derechos reservados
- */
 package com.ejercicio.test;
 
 import java.util.Arrays;
@@ -12,7 +8,7 @@ import org.junit.Test;
 import com.ejercicio.salario.Semana;
 
 /**
- * <b> Incluir aqui la descripcion de la clase. </b>
+ * <b> Clase para realizar las pruebas de la enumeracion de la semana. </b>
  * 
  * @author jlucero
  * @version $Revision: 1.0 $
@@ -32,7 +28,7 @@ public class PruebaSemana {
 		assert (Arrays.asList(Semana.values()).stream().distinct().count() == 7);
 	}
 
-	// @Test
+	@Test
 	public void obtenerCodigoViernes() {
 		assert (Semana.FRIDAY.getCodigo().equals(Semana.valueOf(Semana.FRIDAY.getCodigo()).getCodigo()));
 	}

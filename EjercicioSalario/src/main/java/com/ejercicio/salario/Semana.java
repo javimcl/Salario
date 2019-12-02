@@ -1,13 +1,7 @@
 package com.ejercicio.salario;
-
-/*
- * Copyright 2019 INSTITUTO ECUATORIANO DE SEGURIDAD SOCIAL - ECUADOR
- * Todos los derechos reservados
- */
-
 /**
  * 
- * <b> Incluir aqui la descripcion de la clase. </b>
+ * <b> Enumeracion de los dias de la semana. </b>
  * 
  * @author jlucero
  * @version $Revision: 1.0 $

@@ -1,7 +1,3 @@
-/*
- * Copyright 2019 INSTITUTO ECUATORIANO DE SEGURIDAD SOCIAL - ECUADOR
- * Todos los derechos reservados
- */
 package com.ejercicio.salario;
 
 import java.util.HashMap;
@@ -9,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * <b> Incluir aqui la descripcion de la clase. </b>
+ * <b> Clase principal para obtener el valor total ganado por el empleador. </b>
  * 
  * @author jlucero
  * @version $Revision: 1.0 $

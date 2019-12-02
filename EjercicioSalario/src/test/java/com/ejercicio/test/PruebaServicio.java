@@ -1,7 +1,3 @@
-/*
- * Copyright 2019 INSTITUTO ECUATORIANO DE SEGURIDAD SOCIAL - ECUADOR
- * Todos los derechos reservados
- */
 package com.ejercicio.test;
 
 import java.time.LocalTime;
@@ -16,7 +12,7 @@ import com.ejercicio.salario.Semana;
 import com.ejercicio.salario.ServicioHorario;
 
 /**
- * <b> Incluir aqui la descripcion de la clase. </b>
+ * <b> Clase para realizar las pruebas de todos los servicios. </b>
  * 
  * @author jlucero
  * @version $Revision: 1.0 $
@@ -26,21 +22,21 @@ import com.ejercicio.salario.ServicioHorario;
  */
 public class PruebaServicio {
 
-	// @Test
+	@Test
 	public void horarioLleno() {
 		Map<String, List<Horario>> horarios = new HashMap<>();
 		horarios = ServicioHorario.llenarHorario();
 		assert (!horarios.isEmpty());
 	}
 
-	// @Test
+	@Test
 	public void verificarHorarioLunes() {
 		Map<String, List<Horario>> horarios = new HashMap<>();
 		horarios = ServicioHorario.llenarHorario();
 		assert (!horarios.get(Semana.MONDAY.getCodigo()).isEmpty());
 	}
 
-	// @Test
+	@Test
 	public void verificarHorarioCodigo() {
 		Map<String, List<Horario>> horarios = new HashMap<>();
 		horarios = ServicioHorario.llenarHorario();
@@ -102,7 +98,7 @@ public class PruebaServicio {
 		assert (20.00 == horarioObtenido.getSalario());
 	}
 
-	// @Test
+	@Test
 	public void verificarSalarioHorario3Domingo() {
 		LocalTime hora = LocalTime.of(22, 30);
 		Map<String, List<Horario>> horarios = new HashMap<>();
@@ -113,9 +109,9 @@ public class PruebaServicio {
 		assert (25.00 == horarioObtenido.getSalario());
 	}
 
-	// @Test
+	@Test
 	public void separaEntrada() {
-		String entrada = "MOE=MO10:00-12:00,TU10:00-12:00,TH01:00-03:00,SA14:00-18:00,SU20:00-21:00";
+		String entrada = "RENE=MO10:00-12:00,TU10:00-12:00,TH01:00-03:00,SA14:00-18:00,SU20:00-21:00";
 		List<String> lista = ServicioHorario.separarCadena(entrada);
 		assert (!lista.isEmpty());
 	}
@@ -136,15 +132,15 @@ public class PruebaServicio {
 
 	@Test
 	public void verificarFormato() {
-		String entrada = "MOE=MO10:90-12:00,TU10:00-12:00,TH01:00-03:00,SA14:00-18:00,SU20:00-21:00";
+		String entrada = "RENE=MO10:00-12:00,TU10:00-12:00,TH01:00-03:00,SA14:00-18:00,SU20:00-21:00";
 		boolean formatoValido = ServicioHorario.validarFormato(entrada);
 		assert (formatoValido);
 	}
-	
+
 	@Test
-	public void obtenerArchivo(){
+	public void obtenerArchivo() {
 		List<String> lineas = ServicioHorario.leerArchivo();
-		assert(!lineas.isEmpty());
+		assert (!lineas.isEmpty());
 	}
 
 }

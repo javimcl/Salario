@@ -1,10 +1,5 @@
-/*
- * Copyright 2019 INSTITUTO ECUATORIANO DE SEGURIDAD SOCIAL - ECUADOR
- * Todos los derechos reservados
- */
 package com.ejercicio.test;
 
-import java.time.LocalDate;
 import java.time.LocalTime;
 
 import org.junit.Test;
@@ -12,7 +7,7 @@ import org.junit.Test;
 import com.ejercicio.salario.Horario;
 
 /**
- * <b> Incluir aqui la descripcion de la clase. </b>
+ * <b> Clase que realiza la prueba de los horarios. </b>
  * 
  * @author jlucero
  * @version $Revision: 1.0 $

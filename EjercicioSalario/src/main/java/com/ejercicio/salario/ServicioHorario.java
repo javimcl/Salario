@@ -19,7 +19,8 @@ import java.util.stream.Stream;
 
 /**
  * 
- * <b> Incluir aqui la descripcion de la clase. </b>
+ * <b> Clase servicio para obtener todos los metodos utlizados para el calculo
+ * del salario. </b>
  * 
  * @author jlucero
  * @version $Revision: 1.0 $
@@ -31,12 +32,14 @@ public class ServicioHorario {
 
 	/**
 	 * 
-	 * <b> Incluir aqui­ la descripcion del metodo. </b>
+	 * <b> Metodo que llena la semana segun el dia y el horario correspondiente
+	 * con sus repectivos valores del salario. </b>
 	 * <p>
 	 * [Author: jlucero, Date: 29/11/2019]
 	 * </p>
 	 *
-	 * @return
+	 * @return Map<String, List<Horario>> la llave es la semana asignada con su
+	 *         codigo con su respectiva lista de horarios
 	 */
 	public static Map<String, List<Horario>> llenarHorario() {
 		Map<String, List<Horario>> horarioSemana = new HashMap<>();
@@ -111,9 +114,9 @@ public class ServicioHorario {
 
 				String prueba1 = "RENE=MO10:00-12:00,TU10:00-12:00,TH01:00-03:00,SA14:00-18:00,SU20:00-21:00";
 				String prueba2 = "ASTRID=MO10:00-12:00,TH12:00-14:00,SU20:00-21:00";
-				String prueba3 = "MOE=MO10:10-12:00,TU10:00-12:00,TH01:00-03:00,SA14:00-18:00,SU20:00-21:00";
-				String prueba4 = "MOE=MO10:20-12:00,TU10:00-12:00,TH01:00-03:00,SA14:00-18:00,SU20:00-21:00";
-				String prueba5 = "MOE=MO10:30-12:00,TU10:00-12:00,TH01:00-03:00,SA14:00-18:00,SU20:00-21:00";
+				String prueba3 = "JAVIER=MO12:00-14:00,TU10:00-12:00,TH01:00-03:00,SA14:00-18:00,SU20:00-21:00";
+				String prueba4 = "JENNY=TU10:00-12:00,WE12:00-15:00,SA13:00-18:00";
+				String prueba5 = "PATRICIO=FR02:00-03:00,SA15:00-18:00,SU20:00-22:00";
 				lineas = new ArrayList<>();
 				lineas.add(prueba1);
 				lineas.add(prueba2);

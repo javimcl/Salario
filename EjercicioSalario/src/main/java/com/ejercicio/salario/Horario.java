@@ -1,14 +1,10 @@
-/*
- * Copyright 2019 INSTITUTO ECUATORIANO DE SEGURIDAD SOCIAL - ECUADOR
- * Todos los derechos reservados
- */
 package com.ejercicio.salario;
 
 import java.time.LocalTime;
 
 /**
  * 
- * <b> Incluir aqui la descripcion de la clase. </b>
+ * <b> Clase horario para colocar el incio y fin con su respectivo salario. </b>
  * 
  * @author jlucero
  * @version $Revision: 1.0 $
