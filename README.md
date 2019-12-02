@@ -85,7 +85,7 @@ Contiene cuatro clases:
 * **Semana**. Enumeracion de los dias de la semana.
 * **ServicioHorario**. Clase servicio para obtener todos los metodos utlizados para el calculo del salario.
 
-Paquete test
+**Paquete test**
 
 Contiene tres clases:
 
