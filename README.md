@@ -3,7 +3,9 @@
 El programa calcula el pago que recibirá un empleado, los datos de entrada son obtenidos de un archivo fichero.txt con la información de los empleados, los días y las horas trabajadas.
 Por ejemplo 
 
+```
 RENE=MO10:00-12:00,TU10:00-12:00,TH01:00-03:00,SA14:00-18:00,SU20:00-21:00
+```
 
 **Dependencias**
 
@@ -23,17 +25,18 @@ Junit. Es un framework para realizar pruebas unitarias.
 * Ingresar a la ruta donde se guarda el proyecto por ejemplo : "/home/jlucero/git/Salario/EjercicioSalario"
 
 * Ejecutar el comando para compilar el proyecto y bajar las dependencias.
-
-	* mvn clean install
+```
+	mvn clean install
+```
 
 * Ingresar a la carpeta target
-
-	* cd target
-
+```
+	cd target
+```
 * Ejecutar el comando
-
-	* java -cp EjercicioSalario-1.jar com.ejercicio.salario.Principal
-
+```
+	java -cp EjercicioSalario-1.jar com.ejercicio.salario.Principal
+```
 **Ejecutar el proyecto en Eclipse**
 
 * Importar el proyecto.
